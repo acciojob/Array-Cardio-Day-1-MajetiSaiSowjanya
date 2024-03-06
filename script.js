@@ -1,74 +1,68 @@
-// Get your shorts on - this is an array workout!
-// ## Array Cardio Day 1
+// Given datasets
+const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const stringsArray = ['apple', 'banana', 'orange', 'grape', 'kiwi'];
 
-// Some data we can work with
-
-const inventors = [
-    { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
-    { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
-    { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
-    { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
-    { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
-    { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
-    { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
-    { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
-    { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
-    { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
-    { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
-    { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
-];
-
-const people = [
-    'Bernhard, Sandra', 'Bethea, Erin', 'Becker, Carl', 'Bentsen, Lloyd', 'Beckett, Samuel', 'Blake, William', 'Berger, Ric', 'Beddoes, Mick', 'Beethoven, Ludwig',
-    'Belloc, Hilaire', 'Begin, Menachem', 'Bellow, Saul', 'Benchley, Robert', 'Blair, Robert', 'Benenson, Peter', 'Benjamin, Walter', 'Berlin, Irving',
-    'Benn, Tony', 'Benson, Leana', 'Bent, Silas', 'Berle, Milton', 'Berry, Halle', 'Biko, Steve', 'Beck, Glenn', 'Bergman, Ingmar', 'Black, Elk', 'Berio, Luciano',
-    'Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin', 'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 'Bierce, Ambrose',
-    'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
-];
-
-// Array.prototype.filter()
-// 1. Filter the list of inventors for those who were born in the 1500's and return the filtered array
-export function myfilter() {
-
+// Function 1: Write a JavaScript function to check if an input is an array or not.
+function isArray(input) {
+    return Array.isArray(input);
 }
 
-// Array.prototype.map()
-// 2. Give us an array of the inventor first and last names (i.e. full name)
-// Ex: For the first inventor the full name will be 'Albert Einstein'
-export function map() {
-
+// Function 2: Write a JavaScript function to clone an array.
+function cloneArray(arr) {
+    return arr.slice(0);
 }
 
-
-// Array.prototype.sort()
-// 3. Sort the inventors by birthdate, oldest to youngest and return the sorted array
-export function sort() {
-
+// Function 3: Write a JavaScript function to get the first element of an array.
+function getFirstElement(arr) {
+    return arr[0];
 }
 
-
-// Array.prototype.reduce()
-// 4. How many years did all the inventors live?
-// Return the total number of years all the inventors lived
-export function reduce() {
-
+// Function 4: Write a JavaScript function to get the last element of an array.
+function getLastElement(arr) {
+    return arr[arr.length - 1];
 }
 
-// 5. Sort the inventors by years lived and return the sorted array
-export function sortbylived() {
-
+// Function 5: Write a JavaScript function to join all elements of an array into a string.
+function joinArrayElements(arr) {
+    return arr.join(',');
 }
 
-// 6. sort Exercise
-// Sort the people alphabetically by last name and return the sorted array
-export function sortByLastName() {
-
+// Function 6: Write a JavaScript function to get the maximum number from an array.
+function getMaxNumber(arr) {
+    return Math.max(...arr);
 }
 
-// 7. Reduce Exercise
-// Sum up the instances of each of these
-const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
+// Function 7: Write a JavaScript function to get the minimum number from an array.
+function getMinNumber(arr) {
+    return Math.min(...arr);
+}
 
-export function reducedSum() {
-    // Return an object containing transports as key and its number of occurances as the key's value
+// Function 8: Write a JavaScript function to get a random element from an array.
+function getRandomElement(arr) {
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    return arr[randomIndex];
+}
+
+// Function 9: Write a JavaScript function to find duplicate elements in an array.
+function findDuplicates(arr) {
+    const duplicates = {};
+    const result = [];
+
+    arr.forEach(item => {
+        if (duplicates[item]) {
+            if (duplicates[item] === 1) {
+                result.push(item);
+            }
+            duplicates[item]++;
+        } else {
+            duplicates[item] = 1;
+        }
+    });
+
+    return result;
+}
+
+// Function 10: Write a JavaScript function to remove duplicate elements from an array.
+function removeDuplicates(arr) {
+    return Array.from(new Set(arr));
 }
